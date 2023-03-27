@@ -1,8 +1,6 @@
-package com.koje.beam.view
+package com.koje.beam
 
 import android.view.WindowManager
-import com.koje.beam.R
-import com.koje.beam.core.Playground
 import com.koje.framework.view.BaseActivity
 import com.koje.framework.view.FrameLayoutBuilder
 import com.koje.framework.view.LinearLayoutBuilder

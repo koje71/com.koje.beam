@@ -1,13 +1,12 @@
-package com.koje.beam.core
+package com.koje.beam
 
-import com.koje.beam.R
 import com.koje.framework.graphics.ImageComponent
-import com.koje.framework.graphics.ImageDrawer
 import com.koje.framework.graphics.Surface
 
 object Playground:Surface() {
 
     val background = createImageDrawer(R.drawable.background)
+    val picmap = createImageDrawer(R.drawable.picmap)
 
     init{
         addComponent(ImageComponent(this)){
@@ -17,6 +16,14 @@ object Playground:Surface() {
 
             addProcedure {
                 scale(ratio, ratio)
+            }
+        }
+
+        addComponent(Asteroid()){
+
+            addProcedure {
+                move(-0.2f,-0.2f)
+                scale(0.1f)
             }
         }
      }
