@@ -12,7 +12,7 @@ import javax.microedition.khronos.opengles.GL10
 open class Surface : GLSurfaceView.Renderer, View.OnTouchListener {
 
     val drawers = mutableListOf<Drawer>()
-    val components = ComponentGroup(this)
+    val content = ComponentGroup(this)
 
     var loopTime = 0
     var loopStart = 0L
@@ -48,7 +48,7 @@ open class Surface : GLSurfaceView.Renderer, View.OnTouchListener {
         glDepthFunc(GL_LEQUAL)
         if (ratio >= 1.4f) {
             Matrix.orthoM(
-                components.matrix,
+                content.matrix,
                 0,
                 -0.5f,
                 0.5f,
@@ -59,7 +59,7 @@ open class Surface : GLSurfaceView.Renderer, View.OnTouchListener {
             )
         } else {
             Matrix.orthoM(
-                components.matrix,
+                content.matrix,
                 0,
                 -0.5f * (1.4f / ratio),
                 0.5f * (1.4f / ratio),
@@ -81,7 +81,7 @@ open class Surface : GLSurfaceView.Renderer, View.OnTouchListener {
         val currentTime = System.currentTimeMillis()
         imageCounter = 0
         if (loopStart > 0) {
-            components.draw()
+            content.draw()
             loopTime = (currentTime - loopStart).toInt()
             updateCounters()
         }
@@ -132,7 +132,7 @@ open class Surface : GLSurfaceView.Renderer, View.OnTouchListener {
 
 
     fun <T : Component> addComponent(member: T, action: T.() -> Unit = {}) {
-        components.addComponent(member, action)
+        content.addComponent(member, action)
     }
 
 }
