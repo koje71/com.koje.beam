@@ -19,7 +19,7 @@ class App : Application() {
             instance = value
         }
 
-        fun debugging():Boolean{
+        fun debugging(): Boolean {
             return BuildConfig.DEBUG
         }
 

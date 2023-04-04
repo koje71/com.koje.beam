@@ -17,7 +17,7 @@ class GameActivity : BaseActivity() {
     }
 
     override fun createLayout(target: FrameLayoutBuilder) {
-        with(target){
+        with(target) {
             addLinearLayout {
                 setOrientationVertical()
                 createHeader(this)
@@ -26,12 +26,12 @@ class GameActivity : BaseActivity() {
         }
     }
 
-    private fun createHeader(target:LinearLayoutBuilder){
-        with(target){
+    private fun createHeader(target: LinearLayoutBuilder) {
+        with(target) {
             addLinearLayout {
                 setOrientationHorizontal()
                 setBackgroundColorId(R.color.black)
-                setPaddingsDP(5,2,5,2)
+                setPaddingsDP(5, 2, 5, 2)
                 addTextView {
                     setTextSizeSP(28f)
                     setFontId(R.font.nunito_bold)
@@ -42,8 +42,8 @@ class GameActivity : BaseActivity() {
         }
     }
 
-    private fun createContent(target:LinearLayoutBuilder){
-        with(target){
+    private fun createContent(target: LinearLayoutBuilder) {
+        with(target) {
             addSurfaceView {
                 setSizeMatchParent()
                 setSurface(Playground)
